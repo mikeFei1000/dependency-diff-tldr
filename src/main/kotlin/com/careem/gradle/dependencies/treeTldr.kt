@@ -25,9 +25,9 @@ fun tldr(old: String, new: String, collapse: List<String>): String {
   val (added, removed, upgraded) = partitionDifferences(removedDependencies, addedDependencies)
 
   return buildString {
-    writeList("New Dependencies", added)
-    writeList("Removed Dependencies", removed, added.isNotEmpty())
-    writeList("Upgraded Dependencies", collapseDependencies(upgraded, collapse),
+    writeList("新增 SDK", added)
+    writeList("删除 SDK", removed, added.isNotEmpty())
+    writeList("更新 SDK", collapseDependencies(upgraded, collapse),
       removed.isNotEmpty() || added.isNotEmpty())
   }
 }
@@ -108,7 +108,7 @@ private fun partitionDifferences(
       removedVersion != null -> {
         mutableRemovedMap.remove(artifact)
         upgrades.add(
-          VersionedDependency(artifact, "$version, (changed from $removedVersion)"))
+          VersionedDependency(artifact, "$removedVersion --> $version"))
       }
       else -> {
         additions.add(VersionedDependency(artifact, version))

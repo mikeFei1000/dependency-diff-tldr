@@ -47,11 +47,11 @@ Compare this to dependency-diff-tldr:
 Results in the following output:
 
 ```
-New Dependencies
+新增 SDK
 com.careem.identity:user-profile:0.0.63
 project :miniapp:thirdparty
 
-Upgraded Dependencies
+更新 SDK
 androidx.annotation:annotation-experimental:1.0.0, (upgraded from 1.0.0-rc01)
 androidx.constraintlayout:constraintlayout:2.0.2, (upgraded from 2.0.1)
 androidx.constraintlayout:constraintlayout-solver:2.0.2, (upgraded from 2.0.1)
